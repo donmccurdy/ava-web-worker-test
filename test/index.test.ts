@@ -1,6 +1,7 @@
 import test from 'ava';
-import { myPackage } from 'my-package';
+import { getWorkerResult } from 'my-package';
 
-test('my-package', (t) => {
-	t.is(myPackage(), true, 'package exists');
+test('my-package', async (t) => {
+	const result = await getWorkerResult();
+	t.is(result, 'result', 'received worker result');
 });
